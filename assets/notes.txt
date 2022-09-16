@@ -1,0 +1,31 @@
+ // get index from user - check
+
+// delete element at index possition - check
+
+// diplay new element index possotions in index table 
+  // replace current table with remaining elements 
+    // remove current table - check
+    // render new array state as table 
+
+
+
+    current issue's 
+      after an element is deleted, only the element at index is deleted
+      which is good but if there are more than
+      on element left, it displays only one element instead 
+      of looping through and diplaying all elements.
+
+    started trying 
+    displayIndexTable.productsArr[i].insertAdjacentHTML
+    but it made more issues and didnt fix anything
+
+    sleep on it and try again in the morning with a 
+    fresh brain 
+
+    im missing the reason it displays in storeProduct()
+    and not in deleteProduct() --
+
+
+make vertical table in html w/index
+get element index value
+inside showTable render new table

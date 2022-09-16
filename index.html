@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html class="page-margin">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Store project</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@700&family=Poppins:wght@300&display=swap"
+      rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <img>
+      <nav class="font-malayalam">
+        <a href="https://dspyk77.github.io/full-stack-course/" target="_blank">My landing page</a>
+        <a href="https://dspyk77.github.io/full-stack-course/projects/index.html" target="_blank">More web apps</a>
+        <a href="./game-ideas/index.html" target="_blank">Game ideas!</a>
+      </nav>
+    </header>
+    <main class="padding-10 font-poppins">
+      <section>
+        <div>
+          <label>Enter the product name, price, weight and catagory below</label><br>
+          <input id="name-input" type="text">
+          <input id="price-input" type="text">
+          <input id="weight-input" type="text">
+          <input id="category-input" type="text">
+          <button onclick="storeProduct()">Add Product</button>
+          <button onclick="showAllCards()">Show all cards</button><br>
+        </div>
+        <div>
+          <label for="del-card">Need to delete one?</label><br>
+          <input type="number" min="0" id="del-item">
+          <button onclick="deleteProduct()">Delete Item</button>
+        </div>
+        <!-- <input id="display-input" type="number">
+        <button onclick="showCard()">Display input</button><br> -->
+        <span style="color: red;" id="error-msg" hidden>Selection not in range</span>
+      </section>
+      <section>
+        <!-- for showTable() -->
+        <table>
+          <tbody>
+            <tr>
+              <th>ID</th>
+              <td id="show-table-id"></td>
+            </tr>
+            <tr>
+              <th>Category</th>
+              <td id="show-table-category"></td>
+            </tr>
+            <tr>
+              <th>Name</th>
+              <td id="show-table-name"></td>
+            </tr>
+            <tr>
+              <th>Price</th>
+              <td id="show-table-price"></td>
+            </tr>
+            <tr>
+              <th>Weight</th>
+              <td id="show-table-weight"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <label for="show-item">Select specific item</label><br>
+          <input type="number" min="0" id="show-item">
+          <button onclick="showTable()">Show Item</button>
+        </div>
+      </section>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Category</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Weight</th>
+            </tr>
+          </thead>
+          <tbody id="index-table">
+            <!-- input values -->
+          </tbody>
+        </table>
+        
+      </section>
+    </main>
+    <footer class="margin-top">
+      <nav class="font-malayalam">
+        <a href="https://dspyk77.github.io/full-stack-course/" target="_blank">My landing page</a>
+        <a href="https://dspyk77.github.io/full-stack-course/projects/index.html" target="_blank">More web apps</a>
+      </nav>
+    </footer>
+    <script src="./assets/script.js"></script>
+  </body>
+
+</html>
