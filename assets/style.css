@@ -1,3 +1,133 @@
 .error-border {
   border: 2px solid red;
 }
+
+/* ===== spacing ===== */
+.padding-10 {
+  padding: 10px;
+}
+
+.page-margin {
+  margin: 25px 50px;
+}
+
+.padding-bottom {
+  padding-bottom: 20px;
+}
+.margin-10 {
+  margin: 10px;
+}
+/* ===== flex ===== */
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.center-items {
+  align-items: center;
+}
+
+.center-content {
+  justify-content: center;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+.flex-col {
+  flex-direction: column;
+}
+/* ===== font ===== */
+.italic {
+  font-style: italic;
+}
+
+.font-malayalam {
+  font-family: "Noto Sans Malayalam", sans-serif;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+/* ===== header ===== */
+.header-img {
+  max-width: 200px;
+}
+.header-font {
+  font-family: "Noto Sans Malayalam", sans-serif;
+  font-size: 43px;
+}
+/* ===== element styling ===== */
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+.table-hover tr:not(:first-child):hover {
+  background-color: #615b5bb2;
+}
+
+main {
+  border: 5px solid;
+  background-color: rgba(241, 233, 233, 0.438);
+}
+/* ===== nav ===== */
+nav {
+  display: flex;
+  background-color: #333;
+  margin-bottom: 5px;
+}
+
+nav a {
+  display: inline-flex;
+  flex-direction: row;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Links - change color on hover */
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.small-vp-header {
+  max-width: 400px;
+}
+
+/* ===== media ===== */
+/* vp w/ >= 700px */
+@media screen and (max-width: 700px) {
+  .page-margin {
+    margin: 15px 20px;
+  }
+  .small-vp-header {
+    margin-right: 30px;
+  }
+  .small-vp-padding-bottom {
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 415px){
+  .page-margin {
+    margin: 15px 1px;
+  }
+  th {
+    font-size: smaller;
+  }
+  .small-vp-header {
+    flex-direction: column;
+  }
+  
+}
+
