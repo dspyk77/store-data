@@ -2,7 +2,13 @@
   border: 2px solid red;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
 /* ===== spacing ===== */
+
 .padding-10 {
   padding: 10px;
 }
@@ -14,32 +20,56 @@
 .padding-bottom {
   padding-bottom: 20px;
 }
+
+.padding-right {
+  padding-right: 5px;
+}
 .margin-10 {
   margin: 10px;
 }
+
+.fit-content {
+  max-width: fit-content;
+  padding-right: 5px;
+}
+
+button {
+  padding: 2px;
+}
+
 /* ===== flex ===== */
-.d-flex {
+.flex-container {
   display: flex;
 }
 
-.d-inline-flex {
-  display: inline-flex;
+.flex-item { 
+  display: flex;
+  padding: 5px;
+  max-width: 270px;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .center-items {
   align-items: center;
 }
 
+/* justify-content goes on the flex container key word CONTENT!! */
 .center-content {
   justify-content: center;
+}
+
+.flex-end {
+  justify-content: end;
 }
 
 .space-around {
   justify-content: space-around;
 }
-.flex-col {
-  flex-direction: column;
-}
+
+/* align self is for selecting and positioniong one flex item */
 /* ===== font ===== */
 .italic {
   font-style: italic;
@@ -55,6 +85,10 @@
 
 .bold {
   font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
 }
 /* ===== header ===== */
 .header-img {

@@ -29,3 +29,4 @@
 make vertical table in html w/index
 get element index value
 inside showTable render new table
+
