@@ -32,22 +32,22 @@
 
           <div class="flex-item fit-content space-around">
             <label class="padding-right">Name:</label>
-            <input id="name-input" type="text" placeholder="Product Name">
+            <input id="name-input" type="text" placeholder="Apple">
           </div>
 
           <div class="flex-item fit-content space-around">
             <label class="padding-right">Price:</label>
-            <input id="price-input" type="text" placeholder="$4.99">
+            <span>$<input id="price-input" type="text" placeholder="1.50"></span>
           </div>
 
           <div class="flex-item fit-content space-around">
             <label class="padding-right">Weight:</label>
-            <input id="weight-input" type="text" placeholder="1 lbs">
+            <input id="weight-input" type="text" placeholder="0.5">
           </div>
 
           <div class="flex-item fit-content space-around">
             <label class="padding-right">Category:</label>
-            <input id="category-input" type="text" placeholder="Product Category">
+            <input id="category-input" type="text" placeholder="Produce">
           </div>
 
           <div class="flex-item fit-content flex-end">
@@ -87,7 +87,7 @@
         </table>
         <div>
           <label for="show-item">Select specific item</label><br>
-          <input type="number" min="0" id="show-item">
+          <input  class="num-input" type="number" min="0" id="show-item">
           <button onclick="showTable()">Show Item</button>
         </div>
       </section>
@@ -108,7 +108,7 @@
         </table>
         <div>
           <label for="del-card">Need to delete one?</label><br>
-          <input type="number" min="0" id="del-item">
+          <input class="num-input" type="number" min="0" id="del-item">
           <button onclick="deleteProduct()">Delete Item</button>
         </div>
       </section>

@@ -9,6 +9,8 @@ var showTableCategory = document.querySelector("#show-table-category")
 var showTablePrice = document.querySelector("#show-table-price")
 var showTableWeight = document.querySelector("#show-table-weight")
 var showTableName = document.querySelector("#show-table-name")
+var deleteIndex = document.querySelector("#del-item")
+var displayErrorMsg = document.querySelector("#error-msg")
 
 var productsArr = [];
 var product = {
@@ -59,17 +61,21 @@ function storeProduct() {
 }
 
 function deleteProduct() {
-  var deleteIndex = document.querySelector("#del-item");
-  productsArr.splice(deleteIndex.value, 1);
+  if (deleteIndex.value >= 0 && deleteIndex.value <= productsArr.length) {
+    productsArr.splice(deleteIndex.value, 1);
 
-  console.log("Remaining elemants:")
-  console.log(productsArr)
+    console.log("Remaining elemants:")
+    console.log(productsArr)
 
-  clearInputs()
+    clearInputs()
 
-  clearIndexTable()
+    clearIndexTable()
 
-  renderNewArrayState()
+    renderNewArrayState()
+  } else {
+    displayErrorMsg.hidden = false;
+    setTimeout(hideErrorMsg, 2000);
+  }
 }
 
 function renderNewArrayState() {
@@ -86,8 +92,8 @@ function renderNewArrayState() {
         <td>${i}</td>
         <td>${currentProduct.category}</td>
         <td>${currentProduct.name}</td>
-        <td>${currentProduct.price}</td>
-        <td>${currentProduct.weight}</td>
+        <td>${"$"}${currentProduct.price}</td>
+        <td>${currentProduct.weight}${"lbs"}</td>
       </tr
     `
     );
@@ -97,12 +103,6 @@ function renderNewArrayState() {
 function clearIndexTable() {
   displayIndexTable.innerHTML = ""
 }
-
-showTableId = document.querySelector("#show-table-id")
-var showTableCategory = document.querySelector("#show-table-category")
-var showTablePrice = document.querySelector("#show-table-price")
-var showTableWeight = document.querySelector("#show-table-weight")
-var showTableName = document.querySelector("#show-table-name")
 
  function clearShowTableValue() {
   showTableId.innerHTML = ""
@@ -122,8 +122,8 @@ function showTable() {
   // render new element table 
   showTableId.innerHTML = elementIdInput
   showTableCategory.innerHTML = currentProduct.category
-  showTablePrice.innerHTML = currentProduct.price
-  showTableWeight.innerHTML = currentProduct.weight
+  showTablePrice.innerHTML = ("$" + currentProduct.price)
+  showTableWeight.innerHTML = (currentProduct.weight + "lbs")
   showTableName.innerHTML = currentProduct.name
 }
 
@@ -132,6 +132,8 @@ function clearInputs() {
   priceInput.value  = ""
   weightInput.value  = ""
   categoryInput.value  = ""
+  deleteIndex.innerHTML = ""
+  displayShowTable.innerHTML = ""
 }
 
 

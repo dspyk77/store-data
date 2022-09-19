@@ -36,7 +36,21 @@
 button {
   padding: 2px;
 }
+ table {
+  margin: 15px 0px;
+ }
 
+ footer {
+  margin-bottom: 50%;
+ }
+
+ th, td {
+  padding: 5px;
+ }
+
+ .num-input {
+  max-width: 40px;
+ }
 /* ===== flex ===== */
 .flex-container {
   display: flex;
