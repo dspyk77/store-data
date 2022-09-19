@@ -166,7 +166,7 @@ nav a:hover {
   }
 }
 
-@media screen and (max-width: 415px){
+@media screen and (max-width: 475px){
   .page-margin {
     margin: 15px 1px;
   }
@@ -177,5 +177,25 @@ nav a:hover {
     flex-direction: column;
   }
   
+}
+
+@media screen and (max-width: 430px){
+  th, td {
+    font-size: small;
+    padding: 1px;
+  }
+  nav {
+    flex-direction: column;
+  }
+  nav a {
+    border: black solid 1px;
+  }
+}
+
+@media screen and (max-width: 330px){
+  td {
+    font-size: x-small;
+  }
+
 }
 
