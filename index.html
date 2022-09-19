@@ -26,6 +26,7 @@
       </nav>
     </header>
     <main class="padding-10 font-poppins">
+
       <section>
         <p class="bold underline">Enter the product name, price, weight and catagory below:</p><br>
         <div class="flex-container flex-col">
@@ -59,7 +60,8 @@
         <button onclick="showCard()">Display input</button><br> -->
         <span style="color: red;" id="error-msg" hidden>Selection not in range</span>
       </section>
-      <section>
+
+      <section id="show-table-section" hidden>
         <!-- for showTable() -->
         <table>
           <tbody>
@@ -85,13 +87,14 @@
             </tr>
           </tbody>
         </table>
+      </section>
+
+      <section id="index-table-section" hidden>
         <div>
           <label for="show-item">Select specific item</label><br>
           <input  class="num-input" type="number" min="0" id="show-item">
           <button onclick="showTable()">Show Item</button>
         </div>
-      </section>
-      <section>
         <table>
           <thead>
             <tr>
@@ -112,6 +115,7 @@
           <button onclick="deleteProduct()">Delete Item</button>
         </div>
       </section>
+      
     </main>
     <footer class="margin-top">
       <nav class="font-malayalam">

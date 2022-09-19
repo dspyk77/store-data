@@ -11,6 +11,8 @@ var showTableWeight = document.querySelector("#show-table-weight")
 var showTableName = document.querySelector("#show-table-name")
 var deleteIndex = document.querySelector("#del-item")
 var displayErrorMsg = document.querySelector("#error-msg")
+var showTableSection = document.querySelector("#show-table-section")
+var indexTableSection = document.querySelector("#index-table-section")
 
 var productsArr = [];
 var product = {
@@ -37,6 +39,12 @@ function storeProduct() {
   productsArr.push(product);
   console.log(productsArr);
 
+  if (productsArr.length >= 0) {
+    indexTableSection.hidden = false;
+  } else {
+    indexTableSection.hidden = true;
+  }
+
   clearIndexTable()
 
   renderNewArrayState()
@@ -62,6 +70,7 @@ function storeProduct() {
 
 function deleteProduct() {
   if (deleteIndex.value >= 0 && deleteIndex.value <= productsArr.length) {
+
     productsArr.splice(deleteIndex.value, 1);
 
     console.log("Remaining elemants:")
@@ -115,6 +124,9 @@ function clearIndexTable() {
 function showTable() {
   // remove current table values
   clearShowTableValue()
+
+  showTableSection.hidden = false
+  
   // get value of element index
   var elementIdInput = displayShowTable.value 
 
