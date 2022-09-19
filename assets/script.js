@@ -3,16 +3,16 @@ var priceInput = document.querySelector("#price-input");
 var weightInput = document.querySelector("#weight-input");
 var categoryInput = document.querySelector("#category-input");
 var displayIndexTable = document.querySelector("#index-table");
-var displayShowTable = document.querySelector("#show-item")
-var showTableId = document.querySelector("#show-table-id")
-var showTableCategory = document.querySelector("#show-table-category")
-var showTablePrice = document.querySelector("#show-table-price")
-var showTableWeight = document.querySelector("#show-table-weight")
-var showTableName = document.querySelector("#show-table-name")
-var deleteIndex = document.querySelector("#del-item")
-var displayErrorMsg = document.querySelector("#error-msg")
-var showTableSection = document.querySelector("#show-table-section")
-var indexTableSection = document.querySelector("#index-table-section")
+var displayShowTable = document.querySelector("#show-item");
+var showTableId = document.querySelector("#show-table-id");
+var showTableCategory = document.querySelector("#show-table-category");
+var showTablePrice = document.querySelector("#show-table-price");
+var showTableWeight = document.querySelector("#show-table-weight");
+var showTableName = document.querySelector("#show-table-name");
+var deleteIndex = document.querySelector("#del-item");
+var displayErrorMsg = document.querySelector("#error-msg");
+var showTableSection = document.querySelector("#show-table-section");
+var indexTableSection = document.querySelector("#index-table-section");
 
 var productsArr = [];
 var product = {
@@ -45,11 +45,11 @@ function storeProduct() {
     indexTableSection.hidden = true;
   }
 
-  clearIndexTable()
+  clearIndexTable();
 
-  renderNewArrayState()
+  renderNewArrayState();
 
-  clearInputs()
+  clearInputs();
 
   // first attempt
   // var id = productsArr.length - 1;
@@ -65,22 +65,21 @@ function storeProduct() {
   //     <td>${product.weight}</td>
   //   </tr
   // `
-  // ); 
+  // );
 }
 
 function deleteProduct() {
-  if (deleteIndex.value >= 0 && deleteIndex.value <= productsArr.length) {
-
+  if (deleteIndex.value >= 0 && deleteIndex.value <= (productsArr.length - 1)) {
     productsArr.splice(deleteIndex.value, 1);
 
-    console.log("Remaining elemants:")
-    console.log(productsArr)
+    console.log("Remaining elemants:");
+    console.log(productsArr);
 
-    clearInputs()
+    clearInputs();
 
-    clearIndexTable()
+    clearIndexTable();
 
-    renderNewArrayState()
+    renderNewArrayState();
   } else {
     displayErrorMsg.hidden = false;
     setTimeout(hideErrorMsg, 2000);
@@ -93,7 +92,7 @@ function renderNewArrayState() {
   // console.log(productsArr[0])
   // console.log(productsArr[0].category)
   for (var i = 0; i < productsArr.length; i++) {
-    var currentProduct = productsArr[i]
+    var currentProduct = productsArr[i];
     displayIndexTable.insertAdjacentHTML(
       "beforeend",
       `
@@ -110,44 +109,45 @@ function renderNewArrayState() {
 }
 
 function clearIndexTable() {
-  displayIndexTable.innerHTML = ""
+  displayIndexTable.innerHTML = "";
 }
 
- function clearShowTableValue() {
-  showTableId.innerHTML = ""
-  showTableCategory.innerHTML = ""
-  showTablePrice.innerHTML = ""
-  showTableWeight.innerHTML = ""
-  showTableName.innerHTML = ""
- }
-// new function showTable()
+function clearShowTableValue() {
+  showTableId.innerHTML = "";
+  showTableCategory.innerHTML = "";
+  showTablePrice.innerHTML = "";
+  showTableWeight.innerHTML = "";
+  showTableName.innerHTML = "";
+}
+
 function showTable() {
-  // remove current table values
-  clearShowTableValue()
+  clearShowTableValue();
+  if (displayShowTable.value >= 0 && displayShowTable.value <= (productsArr.length - 1)) {
+    showTableSection.hidden = false;
 
-  showTableSection.hidden = false
-  
-  // get value of element index
-  var elementIdInput = displayShowTable.value 
+    var elementIdInput = displayShowTable.value;
 
-  var currentProduct = productsArr[elementIdInput]
-  // render new element table 
-  showTableId.innerHTML = elementIdInput
-  showTableCategory.innerHTML = currentProduct.category
-  showTablePrice.innerHTML = ("$" + currentProduct.price)
-  showTableWeight.innerHTML = (currentProduct.weight + "lbs")
-  showTableName.innerHTML = currentProduct.name
+    var currentProduct = productsArr[elementIdInput];
+
+    showTableId.innerHTML = elementIdInput;
+    showTableCategory.innerHTML = currentProduct.category;
+    showTablePrice.innerHTML = "$" + currentProduct.price;
+    showTableWeight.innerHTML = currentProduct.weight + "lbs";
+    showTableName.innerHTML = currentProduct.name;
+  } else {
+    displayErrorMsg.hidden = false;
+    setTimeout(hideErrorMsg, 2000);
+  }
 }
 
 function clearInputs() {
   nameInput.value = "";
-  priceInput.value  = ""
-  weightInput.value  = ""
-  categoryInput.value  = ""
-  deleteIndex.innerHTML = ""
-  displayShowTable.innerHTML = ""
+  priceInput.value = "";
+  weightInput.value = "";
+  categoryInput.value = "";
+  deleteIndex.innerHTML = "";
+  displayShowTable.innerHTML = "";
 }
-
 
 // ====================================== resorce funtions - delete when finished ===============================================
 
@@ -175,17 +175,15 @@ function hideErrorMsg() {
 }
 
 function delCard() {
-  var deleteIndex = document.querySelector("#del-card")
+  var deleteIndex = document.querySelector("#del-card");
   if (deleteIndex.value >= 0 && deleteIndex.value <= cardArr.length - 1) {
-  cardArr.splice(deleteIndex.value, 1);
-  showAllCards()
-} else {
-  displayErrorMsg.hidden = false;
-  setTimeout(hideErrorMsg, 2000);
+    cardArr.splice(deleteIndex.value, 1);
+    showAllCards();
+  } else {
+    displayErrorMsg.hidden = false;
+    setTimeout(hideErrorMsg, 2000);
+  }
 }
-}
-
-
 
 function randomCard() {
   clearCards();
@@ -209,7 +207,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// this function is for later use or for use in later projects. It checks input and sends an error if to high or low 
+// this function is for later use or for use in later projects. It checks input and sends an error if to high or low
 function showCard() {
   if (displayInput.value >= 0 && displayInput.value <= cardArr.length - 1) {
     clearCards();
@@ -223,7 +221,7 @@ function showCard() {
     );
   } else {
     clearCards();
-    displayErrorMsg.hidden = false; 
+    displayErrorMsg.hidden = false;
     setTimeout(hideErrorMsg, 2000);
   }
 }
